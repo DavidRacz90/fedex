@@ -10,13 +10,13 @@ const cors = require('cors');
 
 app.use(cors());
 
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-// mongoose.connect(`mongodb+srv://local-user:${process.env.DB_PASSWORD}@cluster0-udqmy.mongodb.net/tribes?retryWrites=true`,
-//   {
-//     useNewUrlParser: true,
-//     useCreateIndex: true,
-//   });
+mongoose.connect(`mongodb+srv://breakdown_team:Qawsed.123@cluster0-p0g2k.mongodb.net/foxypedia`,
+  {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+  });
 
 app.use(express.json());
 
