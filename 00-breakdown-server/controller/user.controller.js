@@ -14,3 +14,4 @@ const getAllUser = () => new Promise((resolve, reject) => {
 module.exports = {
   userController,
 };
+
