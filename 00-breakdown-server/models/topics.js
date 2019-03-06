@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const Topics = new Schema({
+const topics = new Schema({
   title: {
     type: String,
     required: true,
@@ -16,8 +16,10 @@ const Topics = new Schema({
     default: '',
   },
   questions: {
-    type: questions.questionsSchema
+    type: questions.questionsSchema,
+    maxlength: 4,
   },
+  
 });
 
-module.exports = mongoose.model('topics', Topics);
+module.exports = mongoose.model('topics', topics);
