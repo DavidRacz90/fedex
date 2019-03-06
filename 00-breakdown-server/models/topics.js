@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+const questions = require('./questions');
+require('./user');
 
 const topics = new Schema({
   title: {
@@ -11,12 +13,16 @@ const topics = new Schema({
     type: String,
     required: true,
   },
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: 'user',
+  },
   img: {
     type: String,
     default: '',
   },
   questions: {
-    type: questions.questionsSchema,
+    type: [questions.questionsSchema],
     maxlength: 4,
   },
   

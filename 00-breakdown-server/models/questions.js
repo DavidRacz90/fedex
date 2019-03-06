@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+const answers = require('./answers');
 
 const questions = new Schema({
   Question: {
@@ -8,8 +9,9 @@ const questions = new Schema({
     unique: true,
   },
   Answers: {
-    type: answers.answersSchema
-  }
+    type: [answers.answersSchema],
+    maxlength: 4
+  },
 });
 
 module.exports = mongoose.model('questions', questions);

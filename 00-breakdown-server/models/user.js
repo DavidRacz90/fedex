@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+const topics = require('./topics');
 
 const user = new Schema({
   username: {
