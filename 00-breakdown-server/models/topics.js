@@ -4,6 +4,10 @@ const questions = require('./questions');
 require('./user');
 
 const topics = new Schema({
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: 'user',
+  },
   title: {
     type: String,
     required: true,
@@ -12,10 +16,6 @@ const topics = new Schema({
   content: {
     type: String,
     required: true,
-  },
-  author: {
-    type: Schema.Types.ObjectId,
-    ref: 'user',
   },
   img: {
     type: String,
